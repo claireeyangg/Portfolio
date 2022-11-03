@@ -11,18 +11,16 @@
     --main-padding: 5px;
 }
 body{
-  font-family: 'Oswald', sans-serif;
+  /*font-family: 'Oswald', sans-serif;*/
+  font-family: 'Adamina', serif;
   background: var(--beige);
   margin: 0;
 }
 .container{
     display: grid;
-    height: 450vh;
-    max-height: max-content;
     width: 100%;
-    max-width: max-content;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 0.1fr 1.5fr 0.2fr 1.5fr 0.75fr 1.5fr 1.5fr 0.5fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
     grid-template-areas:  
         "nav nav nav nav nav nav nav nav nav nav nav nav"
         "main main main main main main main main main main main main"
@@ -30,19 +28,18 @@ body{
         "content-left content-left content-left content-left content-left content-left content-right content-right content-right content-right content-right content-right"
         "mission mission mission mission mission mission mission mission mission mission mission mission"
         "flute flute flute flute flute flute flute flute flute flute flute flute"
-        "code code code code code code code code code code code code"
         "footer footer footer footer footer footer footer footer footer footer footer footer";
     grid-gap: 0.2rem;
     font-weight: 400px;
+    height: auto;
     font-size: 12px;
     text-align: center;
-    overflow: scroll;
+    overflow: auto;
 }
 
 nav{
     background: var(--beige);
     grid-area: nav;
-
 }
 
 main{
@@ -55,6 +52,7 @@ main{
 #subTitle{
     background: var(--fuscia);
     grid-area: subTitle;
+    border-radius: var(--main-radius);
 }
 
 #content-left{
@@ -81,11 +79,6 @@ main{
   grid-area: flute;
 }
 
-#code{
-  background: var(--coral);
-  grid-area: code;
-}
-
 footer{
     background: var(--greenL);
     grid-area: footer;
@@ -93,9 +86,8 @@ footer{
 
 @media only screen and (max-width: 768px) {
     .container {
-      height: 500vh;
       grid-template-columns: 1fr;
-      grid-template-rows: 0.1fr 1fr 0.4fr 1fr 1fr 0.5fr 1fr 1fr 1fr 0.3fr; 
+      grid-template-rows: auto auto auto auto auto auto auto auto auto; 
       grid-template-areas:
         "nav"
         "main"
@@ -105,7 +97,6 @@ footer{
         "mission"
         "mission"
         "flute"
-        "code"
         "footer";
       font-size: 8px;
     }
@@ -135,6 +126,7 @@ footer{
 }
 .nav__menu{
   display: flex;
+  flex-direction: column;
   column-gap: 1em;
   row-gap: 2em;
   align-items: center;
@@ -156,15 +148,15 @@ footer{
 .nav__menu a{
   text-decoration: none;
   color: inherit;
-  font-size: 1.2rem;
+  font-size: 1.5em;
 }
 .nav__menu svg{
   width: 1.5rem;
-  fill: red;
 }
 /*toggle the hamburger menu in mobile*/
 #nav__checkbox:checked ~ ul.nav__menu li{
   display: block;
+  flex-direction: column;
   color: var(--forest);
   margin: 0;
 }
@@ -176,7 +168,7 @@ footer{
   display: none;
 }
 /*desktop view*/
-@media only screen and (min-width: 550px){
+@media only screen and (min-width: 768px){
   .nav__toggle{
     display: none;
   }
@@ -191,23 +183,22 @@ footer{
 /*nav*/
 
 /*main*/
-
+main{
+  height: 85vh;
+}
 main .square{
   position: relative;
   width: 95%;
   height: 90%;
   margin: auto;
   background-color: var(--greenM);
+  align-items: center;
   border-radius: 90px 0px;
 }
-.center {
-  border: 5px solid #FFFF00;
-  line-height: 90%;
-  height: 90%;
-  }
+
 .square .intro{
   display: flex;
-  position: absolute;
+  position: relative;
   justify-content: flex-start;
   margin-left: 1em;
   margin-top: 1em;
@@ -215,29 +206,32 @@ main .square{
   font-family: inherit;
   font-size: 4em;
 }
-.center .square{
+.square{
   display: inline-block;
   line-height: normal;
   vertical-align: middle;
+  align-items: center;
 }
 .square .name{
   position: relative;
-  justify-self: center;
-  text-align: center;
   color: var(--beige);
-  font-family: inherit;
+  font-family: 'Luckiest Guy', cursive;
   font-size: 8em;
-  margin-top: 2em;
-  margin-bottom: 0em;
+  margin: 0;
 }
-square .based{
-  position: absolute;
-  justify-self: center;
-  text-align: center;
+.square .iden{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.square .based{
+  position: relative;
   color: var(--beige);
   font-family: inherit;
-  font-size: 5em;
-  margin-top: 0em;
+  font-size: 2em;
 }
 /*subTitle*/
 .imA{
@@ -281,35 +275,80 @@ square .based{
 /*flute*/
 .flute{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows:0.01fr auto auto auto;
   grid-template-areas:
   "in in"
-  "audio audio"
   "solo solo"
   "gyo gyo"
   "news news";
-  grid-gap: 0.01 rem;
+  grid-gap: 0.01em;
   font-weight: 0;
   font-size: 8px;
+  height: auto;
   text-align: center;
+  padding: 10px;
+  color: var(--beige);
 }
 .flute .musicIntro{
   grid-area: in;
+  font-size: 2em;
+  color: var(--beige);
 }
 .flute .solo{
   grid-area: solo;
 }
+.flute .solo #cham{
+  margin-bottom: 2.5em;
+}
 .flute .gyo{
   grid-area: gyo;
 }
-.flute .audio-media{
-  grid-area: audio;
-}
 .flute .flute-news{
   grid-area: news;
+  font-size: 1em;
 }
-/*code*/
+.flute .rep{
+  font-size: 2em;
+}
+.flute .date{
+  font-size: 2em;
+}
+.flute .pas{
+  font-size: 2em;
+}
+/*flute grid flex layout*/
+.flute .musicIntro{
+  display: flex;
+  flex-direction: row;
+  font-weight: 2px;
+}
+.flute .solo{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.solo h1{
+  font-size: 2.5em;
+  font-weight: 0.5px;
+  color: var(--beige);
+}
+.flute .gyo{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.gyo h1{
+  font-size: 2.5em;
+  font-weight: 0.5px;
+  color: var(--beige);
+}
 /*footer*/
 .ti-brand-linkedin {
   position: relative;
@@ -331,6 +370,15 @@ square .based{
   text-decoration: none;
   margin: 5px 20px;
 }
+.fa{
+  position: relative;
+  color: var(--greenM);
+  font-size: 2em;
+  text-decoration: none;
+  align-self: center;
+  margin: 5px 20px;
+  padding: 10px;
+}
 .icon{
   margin-top: 2em;
   color: var(--greenM);
@@ -345,3 +393,50 @@ square .based{
   font-size: 1.25em;
 }
 
+
+/*resume.html*/
+.container-resume{
+display: grid;
+width: 100%;
+grid-template-columns: repeat(12, 1fr);
+grid-template-rows: auto auto auto;
+grid-template-areas:  
+    "nav nav nav nav nav nav nav nav nav nav nav nav"
+    "pr pr pr pr pr pr fl fl fl fl fl fl"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+grid-gap: 0.2rem;
+font-weight: 400px;
+font-size: 12px;
+text-align: center;
+overflow: auto;
+}
+nav{
+  background: var(--beige);
+  grid-area: nav;
+}
+#pr{
+background: var(--fuscia);
+grid-area: pr;
+border-radius: var(--main-radius);
+}
+#fl{
+  background: var(--pink);
+  grid-area: fl;
+  border-radius: var(--main-radius);
+  }
+footer{
+background: var(--greenL);
+grid-area: footer;
+}
+@media only screen and (max-width: 768px) {
+.container-resume {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto; 
+  grid-template-areas:
+    "nav"
+    "pr"
+    "fl"
+    "footer";
+  font-size: 8px;
+}
+}

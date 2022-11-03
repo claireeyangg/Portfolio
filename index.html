@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Claire Yang</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <!--hamburger svg-->
 
     <div class="refLink">
@@ -30,8 +31,19 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
-      </div>  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Adamina&family=Aleo&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    </div>  
     <style src="script.js"></style>
 </head>
 
@@ -48,24 +60,24 @@
             </svg>
             </label>
             <ul class="nav__menu">
-                <li><a href="#">
-                    <img class="logo" src="file:///C:/Users/clair/OneDrive/Desktop/website/images/C%20(2).png" width="125" height="125">
+                <li><a href="index.html">
+                    <img class="logo" src="./images/officialLogo.png" width="65" height="auto">
                     </a>
                 </li>
-                <li><a href="#">home</a></li>
+                <li><a href="index.html">home</a></li>
                 <li><a href="#imA">about</a></li>
-                <li><a href="#">work</a></li>
-                <li><a href="#">flute</a></li>
-                <li><a href="#">code</a></li>
-                <li><a href="#">resume</a></li>
-                <li><a href="#">contact</a></li>
+                <li><a href="#flute">flute</a></li>
+                <li><a href="resume.html">resume</a></li>
+                <li><a href="#footer">contact</a></li>
             </ul>
         </nav>
         <main>
-            <div class="square">
+            <div id="mainName" class="square">
                 <h2 class="intro">hi my name is...</h2>
-                <p class="name">CLAIRE YANG</p>
-                <p class="based">based in Los Angeles, California</p>
+                <div class="iden">
+                    <p class="name">CLAIRE YANG</p>
+                    <p class="based">based in Los Angeles, California</p>
+                </div>
             </div>
         </main>
         <div id="subTitle">
@@ -73,11 +85,11 @@
         </div>
         <div id="content-left">
             <h1 class="musician">MUSICIAN</h1>
-            <img id="musicianProfile"src="file:///C:/Users/clair/OneDrive/Desktop/website/images/musicianPhoto.jpg" width="45%">
+            <img id="musicianProfile"src="./images/musicianPhoto.jpg" width="45%">
         </div>
         <div id="content-right">
-            <h1 class="codeEnthu">CODE</h1>
-            <img id="codingProfile"src="file:///C:/Users/clair/OneDrive/Desktop/website/images/profilepic.jpg" width="50%">
+            <h1 class="codeEnthu">PROGRAMMER</h1>
+            <img id="codingProfile"src="./images/profilepic.jpg" width="50%">
         </div>
         <div id="mission">
             <div class="mission-content">
@@ -88,29 +100,47 @@
         <div class="flute"id="flute">
             
             <div class="musicIntro">
-                <h1>my journey...</h1>
-            </div>
-
-            <div class="audio-media">
-                <h1>audio recordings</h1>
+                <h1>my musical journey...</h1>
             </div>
 
             <div class="solo">
-                <h1>solo pieces</h1>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/4zB5n0nZPmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h1>SOLO PIECES</h1>
+                <iframe width="36%" src="https://www.youtube.com/embed/4zB5n0nZPmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="cham"></iframe>
             </div>
             <div class="gyo">
-                <h1>glendale youth orhestra</h1>
+                <h1>GLENDALE YOUTH ORCHESTRA</h1>
+                <h2 class="date">November 21, 2021</h2>
+                <p class="rep">Prokofiev - Peter and the Wolf</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/ddvQxsvWPf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h2 class="date">March 13, 2022</h2>
+                <p class="rep">Schubert - Symphony No. 8 in b minor</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/J19a_lsDLs4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="rep">Beethoven - Symphony No. 7 in A Major</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/rwvrxtuyfd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="rep">Dvorak - Symphony No. 8 in G Major</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/FyY1Mk5FBLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="rep">Tchaikovsky - Symphony No. 4 f minor</p>
+                <h2 class="date">May 22, 2022</h2>
+                <p class="rep">Stravinsky - Firebird Suite, Berceuse and Finale</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/nqwnlbF_BB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="rep">Faure - Pavane, Op. 50</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/FI-g3t8F3EU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="rep">Marquez - Danzon No. 2</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/GF_8l2xLvtM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="rep">Rodgers - Selections from the King and I</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/Eky4id7IHn0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="rep">Hisaishi - Merry Go Round of Life from Howl's Moving Castle</p>
+                <iframe width="36%" src="https://www.youtube.com/embed/Z-WTdBqrdQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
             <div class="flute-news">
-                <h1>articles</h1>
-                <a href="https://www.pasadenaweekly.com/arts_and_events/glendale-youth-orchestra-asks-shall-we-dance/article_53566e24-d730-11ec-b900-7fdf9f043c71.html">news</a>
+                <h1>ARTICLES</h1>
+                <a class="pas"href="https://www.pasadenaweekly.com/arts_and_events/glendale-youth-orchestra-asks-shall-we-dance/article_53566e24-d730-11ec-b900-7fdf9f043c71.html" target="_blank">Pasadena Weekly</a>
             </div>
 
         </div>
-        <div id="code"></div>
-        <footer>
+
+        <footer id="footer">
             <h2 class="discover">CONTACT ME!</h2>
             <div class="footer">
                 <div class="icon">
@@ -118,6 +148,8 @@
                     <a href="https://www.linkedin.com/in/claire-yang-42b849228" target="_blank"><i class="ti ti-brand-linkedin"></i></a>
                     <!--mail icon-->
                     <a href="mailto:claireyang1213@gmail.com" target="_blank"><i class="ti ti-mailbox"></i></a>
+                    <!--youtube icon-->
+                    <a href="https://www.youtube.com/channel/UCd8xl3lsj19CJN0jAK-oRzA" target="_blank"><i style="font-size:24px" class="fa">&#xf16a;</i></a>
                 </div>
             </div>
             <p class="contactInfo"><strong>(213) 373-3522 | claireyang1213@gmail.com</strong></p>
