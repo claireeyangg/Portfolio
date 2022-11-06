@@ -100,9 +100,14 @@ footer{
         "mission"
         "flute"
         "footer";
-      font-size: 8px;
+        font-size: 8px;
     }
+}
+@media only screen and (max-width: 768px) {
+  .container{
+    font-size: 8px;
   }
+}
 .nav{
   border-bottom: 4px solid var(--forest);
   display: flex;
@@ -140,10 +145,10 @@ footer{
   column-gap: 1em;
   row-gap: 3em;
   align-items: center;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin: 1em;
-  font-size: 2em;
+  padding-left: 0em;
+  padding-right: 0em;
+  margin: 0em;
+  font-size: 1.5em;
 }
 .nav__menu li{
   font-family: 'Oswald', sans-serif;
@@ -157,9 +162,9 @@ footer{
 
 }
 .nav__menu a{
+  margin-right: 0em;
   text-decoration: none;
   color: inherit;
-  font-size: 1.5em;
 }
 .nav__menu svg{
   width: 1.5rem;
@@ -352,7 +357,7 @@ main .square{
   align-items: center;
 }
 .solo h1{
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 0.5px;
   color: var(--beige);
 }
@@ -365,7 +370,7 @@ main .square{
   align-items: center;
 }
 .gyo h1{
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 0.5px;
   color: var(--beige);
 }
