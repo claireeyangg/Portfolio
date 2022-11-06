@@ -34,7 +34,7 @@ body{
     height: auto;
     font-size: 12px;
     text-align: center;
-    overflow: auto;
+    overflow: hidden;
 }
 
 nav{
