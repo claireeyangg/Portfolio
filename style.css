@@ -7,6 +7,8 @@
     --beige: #EFEBE0;
     --pink: #fadadd;
     --blue: #6591B8;
+    --penn-blue: #011F5B;
+    --light-blue: #F0F8FF;
     --main-radius: 5px;
     --main-padding: 5px;
 }
@@ -18,7 +20,6 @@ body{
 }
 .container{
     display: grid;
-    width: 100vw;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto auto auto auto auto auto;
     grid-template-areas:  
@@ -30,11 +31,14 @@ body{
         "flute flute flute flute flute flute flute flute flute flute flute flute"
         "footer footer footer footer footer footer footer footer footer footer footer footer";
     grid-gap: 0.2rem;
-    font-weight: 400px;
     height: auto;
     font-size: 12px;
     text-align: center;
-    overflow: hidden;
+    overflow: visible;
+    justify-content: center;
+    align-content: space-around;
+    align-items: stretch;
+    flex-direction: column;
 }
 
 nav{
@@ -88,9 +92,7 @@ footer{
 
 @media only screen and (max-width: 768px) {
     .container {
-      display: flex;
-      width: 100vw;
-      min-width: 0;
+      display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto auto auto auto auto auto auto; 
       grid-template-areas:
@@ -239,8 +241,7 @@ main .square{
   display: flex;
   position: relative;
   justify-content: flex-start;
-  margin-left: 1em;
-  margin-top: 1em;
+  margin: 0em;
   color: var(--beige);
   font-family: inherit;
   font-size: 4.5em;
@@ -278,12 +279,29 @@ main .square{
   font-size: 3em;
   color: var(--fuscia);
 }
+/*content*/
+.descrip{
+  font-size: 1.5em;
+  word-wrap: break-word;
+}
 /*content-left*/
+#content-left{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  color: var(--fuscia);
+  justify-content: space-around;
+
+  padding-left: 2em;
+  padding-right: 2em;
+}
 .musician{
   color: var(--fuscia);
-}
-.codeEnthu{
-  color: var(--pink);
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3em;
+  letter-spacing: 0.05em;
 }
 #musicianProfile{
   position: relative;
@@ -293,23 +311,41 @@ main .square{
   border-style: solid;
   border-color: var(--coral);
 }
+/*content-right*/
+#content-right{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  color: var(--pink);
+  justify-content: space-around;
+
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.codeEnthu{
+  color: var(--pink);
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3em;
+  letter-spacing: 0.09em;
+}
 #codingProfile{
   position: relative;
   justify-self: center;
   border-radius: 15px;
   margin-bottom: 1em;
-  margin-top: 7em;
+  margin-top: 0em;
   border-style: solid;
   border-color: var(--pink);
 }
-/*content-right*/
 /*mission*/
 .mission-content #missionTitle{
-  font-size: 4em;
+  font-size: 2.5em;
   color: var(--greenM);
 }
 .mission-content #missionState{
-  font-size: 3em;
+  font-size: 2em;
   color: var(--greenM);
 }
 /*flute*/
@@ -420,7 +456,7 @@ main .square{
   padding: 10px;
 }
 .icon{
-  margin-top: 2em;
+  margin-top: 0em;
   color: var(--greenM);
 }
 .discover{
@@ -428,7 +464,7 @@ main .square{
   font-size: 2em;
 }
 .contactInfo{
-  margin-top: 2em;
+  margin-top: 1em;
   color: var(--greenM);
   font-size: 1.25em;
 }
@@ -436,33 +472,41 @@ main .square{
 
 /*resume.html*/
 .container-resume{
-display: grid;
-width: 100%;
-grid-template-columns: repeat(12, 1fr);
-grid-template-rows: auto auto auto;
-grid-template-areas:  
-    "nav nav nav nav nav nav nav nav nav nav nav nav"
-    "pr pr pr pr pr pr fl fl fl fl fl fl"
-    "footer footer footer footer footer footer footer footer footer footer footer footer";
-grid-gap: 0.2rem;
-font-weight: 400px;
-font-size: 12px;
-text-align: center;
-overflow: auto;
+  display: grid;
+  height: auto;
+  min-height: 100vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto 1.5fr auto;
+  grid-template-areas:  
+      "nav nav nav nav nav nav nav nav nav nav nav nav"
+      "res-hd res-hd res-hd res-hd res-hd res-hd fl-hd fl-hd fl-hd fl-hd fl-hd fl-hd "
+      "pr pr pr pr pr pr fl fl fl fl fl fl"
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
+  grid-gap: 0.2rem;
+  font-size: 12px;
+  text-align: center;
+  overflow-x: hidden;
+  background-color: var(--penn-blue);
 }
-nav{
-  background: var(--beige);
-  grid-area: nav;
+#res-hd{
+  grid-area: res-hd;
+  height: auto;
 }
 #pr{
-background: var(--fuscia);
+background: var(--light-blue);
 grid-area: pr;
 border-radius: var(--main-radius);
+height: auto;
+}
+#fl-hd{
+  grid-area: fl-hd;
+  height: auto;
 }
 #fl{
-  background: var(--pink);
+  background: var(--light-blue);
   grid-area: fl;
   border-radius: var(--main-radius);
+  height: auto;
   }
 footer{
 background: var(--greenL);
@@ -471,12 +515,109 @@ grid-area: footer;
 @media only screen and (max-width: 768px) {
 .container-resume {
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto; 
+  grid-template-rows: 1fr auto auto 1.5fr 1.5fr 1fr; 
   grid-template-areas:
     "nav"
+    "res-hd"
     "pr"
+    "fl-hd"
     "fl"
     "footer";
   font-size: 8px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+}
+/*resume design*/
+nav{
+  min-height: 10vh;
+}
+#res-hd{
+  display: flex;
+  font-family: 'Luckiest Guy', cursive;
+  background-color: var(--blue);
+  color: var(--beige);
+  font-size: 3em;
+  height: auto;
+  max-height: 10vh;
+  letter-spacing: 0.1em;
+
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+#fl-hd{
+  display: flex;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3em;
+  background-color: var(--blue);
+  color: var(--beige);
+  height: auto;
+  max-height: 10vh;
+  letter-spacing: 0.1em;
+
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+footer{
+  display: flex;
+  max-height: 20vh;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: var(--main-padding);
+}
+footer .discover{
+  margin: 0;
+  padding: var(--main-padding);
+}
+#pr{
+  min-height: 60vh;
+  color: var(--beige);
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+#fl{
+  min-height: 60vh;
+  color: var(--forest);
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.resume{
+  color: var(--blue);
+  font-size: 1em;
+  text-decoration: none;
+}
+.resume a{
+  color: var(--penn-blue);
+  text-decoration: none;
+}
+.flute-resume a{
+  font-weight: 1em;
+  color: var(--penn-blue);
+  text-decoration: none;
+}
+.flute-resume{
+  color: var(--blue);
+  font-size: 1em;
+  text-decoration: none;
+}
+.pdf{
+  margin-top: 1.5em;
 }
